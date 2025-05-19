@@ -1,40 +1,37 @@
-﻿Console.Clear();
-string resposta; 
+Console.Clear();
+string resposta;
 
 
 Console.WriteLine("O objeto está se movendo (S/N)?");
-bool movendo = Console.ReadLine()!.ToUpper().Substring(0, 1) == "S";
+String movendo = Console.ReadLine()!.ToUpper().Substring(0, 1);
 
 Console.WriteLine("Deveria(S/N)?");
-bool deveria = Console.ReadLine()!.ToUpper().Substring(0, 1) == "N";
+string deveria = Console.ReadLine()!.ToUpper().Substring(0, 1);
 
 
-if (!movendo)
+if (movendo == "S" && deveria == "S")
 {
-
-    if(!deveria)
-    {
-        resposta = "ótimo";
-        Console.WriteLine(resposta);
-   } 
-   else
-   {
-    resposta = "Use WD-40.";
-     Console.WriteLine(resposta);
-   }
+  resposta = "ótimo";
+  Console.WriteLine(resposta);
 }
-else
+else if (movendo == "S" && deveria == "N")
 {
-      if(!deveria)
-    {
-        resposta = "ótimo";
-        Console.WriteLine(resposta);
-   } 
-   else
-   {
-    resposta = "Use Silver Tape.";
-    Console.WriteLine(resposta);
+  resposta = "Use Silver Tape.";
+  Console.WriteLine(resposta);
+}
 
-   }
+else if (movendo == "N" && deveria == "N")
+{
+  resposta = "ótimo";
+  Console.WriteLine(resposta);
+}
+else if (movendo == "N" && deveria == "S")
+{
+  resposta = "Use WD-40.";
+  Console.WriteLine(resposta);
+}
+else {
+ resposta = "Resposta Inválida";
+ Console.WriteLine(resposta);
 }
 
